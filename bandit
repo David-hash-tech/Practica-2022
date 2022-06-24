@@ -1,0 +1,181 @@
+level 0:
+	ssh bandit.labs.overthewire.org -p 2220 -l bandit0
+	ls
+	cat read me
+	exit
+	ssh bandit.labs.overthewire.org -p 2220 -l bandit1
+	password: boJ9jbbUNNfktd78OOpsqOltutMc3MY1
+	
+level 1:
+	ls
+	cat ./-
+	exit
+	ssh bandit.labs.overthewire.org -p 2220 -l bandit2
+	password: CV1DtqXWVFXTvM2F0k09SHz0YwRINYA9
+
+level 2:
+	ls
+	cat 'spaces in this file'
+	exit
+	ssh bandit.labs.overthewire.org -p 2220 -l bandit3
+	password: UmHadQclWmgdLOKQ3YNgjWxGoRMb5luK
+
+level 3:
+	ls
+	cd inhere
+	ls -a
+	cat .hidden
+	exit
+	ssh bandit.labs.overthewire.org -p 2220 -l bandit4
+	password: pIwrPrtPN36QITSp3EQaw936yaFoFgAB
+
+level 4:
+	ls
+	cd inhere
+	ls
+	cat ./-file07
+	exit
+	ssh bandit.labs.overthewire.org -p 2220 -l bandit5
+	password: koReBOKuIDDepwhWk7jZC0RTdopnAYKh
+	
+level 5:
+	ls
+	cd inhere
+	ls
+	find -type f -size 1033c ! -executable
+	cat ./maybehere07/.file2
+	exit
+	ssh bandit.labs.overthewire.org -p 2220 -l bandit6
+	password: DXjZPULLxYr17uwoI01bNLQbtFemEgo7
+	
+level 6:
+	find / -user bandit7 -group bandit6 -size 33c -type f 2>/dev/null
+	cat /var/lib/dpkg/info/bandit7.password
+	exit
+	ssh bandit.labs.overthewire.org -p 2220 -l bandit7
+	password: HKBPTKQnIay4Fw76bEy8PVxKEDQRKTzs
+
+level 7:
+	ls
+	cat data.txt | egrep "millionth" | cut -f2
+	exit
+	ssh bandit.labs.overthewire.org -p 2220 -l bandit8
+	password: cvX2JJa4CFALtqS87jk27qwqGhBM9plV
+	
+level 8:
+	ls
+	sort data.txt | uniq -u
+	exit
+	ssh bandit.labs.overthewire.org -p 2220 -l bandit9
+	password: UsvVyFSfZZWbi6wgC7dAFyFuR6jQQUhR
+
+level 9:
+	ls
+	strings data.txt | egrep '='
+	exit
+	ssh bandit.labs.overthewire.org -p 2220 -l bandit10
+	password: truKLdjsbJ5g7yyJ2X2R0o3a5HQJFuLk
+	
+level 10:
+	ls 
+	cat data.txt | base64 -d
+	exit
+	ssh bandit.labs.overthewire.org -p 2220 -l bandit11
+	password: IFukwKGsFW8MOq3IRFqrxE1hxTNEbUPR
+
+level 11:
+	ls
+	cat data.txt | tr 'A-Za-z' 'N-ZA-Mn-za-m'
+	exit
+	ssh bandit.labs.overthewire.org -p 2220 -l bandit12
+	password: 5Te8Y4drgCRfCx8ugdwuEX8KFC6k2EUu
+	
+level 12:
+	ls
+	mv data.txt /tmp/data
+	cat data.txt | xxd -r > /tmp/data
+	cd /tmp
+	file data
+	mv data data1.gz
+	gzip -d data1.gz
+	file data1
+	mv data1 data2.bz
+	bzip2 -d data2.bz
+	file data2
+	mv data2 data3.gz
+	gzip -d data3.gz
+	file data3
+	mv data3 data4.tar
+	man tar
+	tar -xf data4.tar
+	file data5.bin
+	mv data5.bin data6.tar
+	tar -xf data6.tar
+	file data6.bin
+	mv data6.bin data7.bz
+	bzip2 -d data7.bz
+	file data7
+	mv data7 data8.tar
+	tar -xf data8.tar
+	file data8.bin
+	mv data8.bin data9.gz
+	gzip -d data9.gz
+	file data9
+	cat data9
+	exit
+	ssh bandit.labs.overthewire.org -p 2220 -l bandit13
+	password: 8ZjyCRiBWFYkneahHwxCv3wb2a1ORpYL
+
+level 13:
+	ssh bandit14@localhost -i sshkey.private
+	cat /etc/bandit_pass/bandit14
+	exit
+	exit
+	ssh bandit.labs.overthewire.org -p 2220 -l bandit14
+	password: 4wcYUJFw0k0XLShlDzztnTBHiqxU3b3e
+	
+level 14:
+	telnet localhost 30000
+	exit
+	ssh bandit.labs.overthewire.org -p 2220 -l bandit15
+	password: BfMYroe26WYalil77FoDi9qh59eK5xNr
+	
+level 15:
+	man openssl
+	openssl s_client -connect localhost:30001 -ign_eof
+	exit
+	ssh bandit.labs.overthewire.org -p 2220 -l bandit16
+	password: cluFn7wTiGryunymYOu4RcffSxQluehd
+
+level 16:
+	nmap localhost -p 31000-32000 -sV
+	openssl s_client -connect localhost:31790
+	mkdir /tmp/key/pk.private
+	cd /temp/key
+	vim pk.private
+	cat pk.private
+	chmod 400 pk.private
+	ssh bandit17@localhost -i pk.private
+	
+
+level 17:
+	diff passwords.old passwords.new
+	exit
+	exit
+	ssh bandit.labs.overthewire.org -p 2220 -l bandit18
+	password: kfBf3eYk5BPBRzwjqutbbfE887SVc5Yd
+	
+level 18:
+	ssh bandit.labs.overthewire.org -p 2220 -l bandit18 "cat readme"
+	exit
+	ssh bandit.labs.overthewire.org -p 2220 -l bandit19
+	password: IueksS7Ubh8G3DCwVzrTd8rAVOwq3M5x
+
+level 19:
+	
+
+
+
+	
+
+	

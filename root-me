@@ -1,0 +1,33 @@
+1) Encoding-ASCII
+	Dat fiind un string in format ascii, trebuie decodificat in text	4C6520666C6167206465206365206368616C6C656E6765206573743A203261633337363438316165353436636436383964356239313237356433323465
+	Le flag de ce challenge est: 2ac376481ae546cd689d5b91275d324e
+
+
+2) FTP-authentication
+	Dupa ce alegem un frame de tip FTP 
+	Alegem optiunea follow si ne apare atat username-ul cat si parola folosite: cdts3500
+	
+3) TELNET-authentication
+	Dupa ce alegem un frame de tip TELNET 
+	Alegem optiunea follow si ne apare atat username-ul cat si parola folosite: user
+	
+3) ETHRNET-frame
+	Avem disponibil datele frame-ului in hexa
+	Dupa ce decodificam obtinem parola in base64: Y29uZmk6ZGVudGlhbA==
+	Parola este: confi:dential
+	
+4) BLUETOOTH-Unknown file
+	Ne vom descarca un fisier binar pe care il vom deschide cu wireshark
+	In frame-ul remote name request vom observa: SamsungE_b9:4f:c6 (0c:b3:19:b9:4f:c6)
+						     Remote Name: GT-S7390G
+	Dupa codare SHA-1 obtinem: 7bfaeaed36c6879bd66b99e5ea7f5abc5e5e32a7
+	
+5) IP-Time To Live
+	In captura wireshark ne vom uita la TTL ultimului frame dinainte ca ping-ul sa se execute corect
+	TTL: 13
+	
+6) SIP-authentication
+	Parola este in clar in fisierul descarcat in field-ul REGISTER: 1234
+	
+7) 
+
